@@ -2,6 +2,7 @@
 
 Social network application with a simplified architectural design that mimics an industrial-level application. 
 The application uses A backend-frontend architectural approach.
+
 The application is gradle-based to enable the communication between database and the application.
 The backend uses Java for functionalities, PostgreSql for Database management.
 The frontend uses JavaFx with FXML Templates for styling.

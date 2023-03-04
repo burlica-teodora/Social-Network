@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onSetMessagePaneInvisible" prefHeight="627.0" prefWidth="700.0" style="-fx-background-color: E6E6F6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.social_network1.controllers.HelloController">
+   <children>
+      <TableView fx:id="tableView" layoutX="7.0" layoutY="106.0" onMouseClicked="#onSendMessage" prefHeight="250.0" prefWidth="316.0">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="37.600006103515625" text="Id" />
+          <TableColumn fx:id="fnameColumn" prefWidth="88.79999542236328" text="Name" />
+            <TableColumn fx:id="emailColumn" prefWidth="129.5999755859375" text="Email" />
+            <TableColumn fx:id="ageColumn" prefWidth="56.79998779296875" text="Age" />
+        </columns>
+      </TableView>
+      <Text fill="#0f1010" layoutX="14.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My friends:">
+         <font>
+            <Font name="Arial Black" size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="userNameFriendTF" layoutX="14.0" layoutY="43.0" prefHeight="25.0" prefWidth="219.0" promptText="username" />
+      <Button fx:id="sendButton" layoutX="240.0" layoutY="43.0" mnemonicParsing="false" onMouseClicked="#onSendRequest" prefHeight="25.0" prefWidth="126.0" style="-fx-background-color: #F0FFFF;" text="Send friend request" textFill="MIDNIGHTBLUE">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font></Button>
+      <Text layoutX="14.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new friend:">
+         <font>
+            <Font name="Arial Black" size="16.0" />
+         </font>
+      </Text>
+      <Button fx:id="removeFriendButton" layoutX="71.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#onRemoveFriend" prefHeight="25.0" prefWidth="188.0" style="-fx-background-color: #F0FFFF;" text="Remove Friend">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="346.0" layoutY="75.0" text="My friend requests:" textFill="INDIGO">
+         <font>
+            <Font name="Arial Black" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="logout" layoutX="597.0" layoutY="11.0" onMouseClicked="#onLogOutClick" prefHeight="29.0" prefWidth="85.0" text="Log out" underline="true">
+         <font>
+            <Font name="Arial Black" size="20.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableRequest" layoutX="346.0" layoutY="106.0" prefHeight="250.0" prefWidth="348.0">
+        <columns>
+          <TableColumn fx:id="idRequest" prefWidth="30.4000244140625" text="Id" />
+          <TableColumn fx:id="usernameTF" prefWidth="73.5999755859375" text="Username" />
+            <TableColumn fx:id="status" prefWidth="73.5999755859375" text="Status" />
+            <TableColumn fx:id="requestTime" prefWidth="168.79998779296875" text="Date&amp;Time" />
+        </columns>
+      </TableView>
+      <Button layoutX="366.0" layoutY="361.0" mnemonicParsing="false" onAction="#onAcceptButton" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #F0FFFF;" text="Accept" textFill="#0f8c4b">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="603.0" layoutY="361.0" mnemonicParsing="false" onAction="#onRejectButton" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #F0FFFF;" text="Reject">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="findusersButton" layoutX="386.0" layoutY="43.0" mnemonicParsing="false" onAction="#onFindUsers" style="-fx-background-color: f0ffff;" text="Find users" textFill="MIDNIGHTBLUE">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="472.0" layoutY="44.0" mnemonicParsing="false" onAction="#onCancelRequest" style="-fx-background-color: f0ffff;" text="Cancel friend request" textFill="MIDNIGHTBLUE">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Button>
+      <Pane fx:id="msgPane" layoutX="182.0" layoutY="402.0" prefHeight="200.0" prefWidth="290.0" visible="false">
+         <children>
+            <TextField fx:id="msgTextField" layoutX="14.0" layoutY="161.0" promptText="Type here..." />
+            <Button fx:id="msgButton" layoutX="175.0" layoutY="161.0" mnemonicParsing="false" onAction="#onSendMessageButton" text="Send" />
+            <ListView fx:id="msgListView" layoutX="14.0" layoutY="11.0" prefHeight="137.0" prefWidth="267.0" />
+            <Button layoutX="224.0" layoutY="161.0" mnemonicParsing="false" onMouseClicked="#onCloseChat" text="Close" textFill="#e11111" />
+         </children>
+      </Pane>
+   </children>
+</Pane>
